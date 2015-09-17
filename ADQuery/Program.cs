@@ -13,6 +13,7 @@ namespace ADQuery
         {
             using (var pc = new PrincipalContext(ContextType.Domain, "corp.local"))
             {
+                var isValid = pc.ValidateCredentials("vgunnam", "L@mbda009");
                 // find user
                 var user = UserPrincipal
                             .FindByIdentity(pc, IdentityType.SamAccountName, 
